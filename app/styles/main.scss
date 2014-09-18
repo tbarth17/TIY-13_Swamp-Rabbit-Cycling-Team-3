@@ -119,7 +119,7 @@ header {
     overflow: scroll;
 
     li {
-        width: 33.33%;
+        width: 33.33333333%;
         max-height:300px;
         display: inline-block;
         overflow:hidden;
@@ -153,11 +153,13 @@ footer {
 @media (max-width: 480px) {
     .flikr-content {
         max-height: 400px;
-        overflow: hidden;
+        display: inline;
+        white-space: nowrap;
+        overflow: scroll;
         li {
             width: 100%;
             background: #CCC;
-            display: block;
+            display: inline-block;
             vertical-align: top;
         }
     }
