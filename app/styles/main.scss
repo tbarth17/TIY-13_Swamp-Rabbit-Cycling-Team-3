@@ -1,52 +1,142 @@
- // Bourbon & Neat
-@import '../../bower_components/bourbon/dist/bourbon';
-@import '../../bower_components/neat/app/assets/stylesheets/neat';
+// Bourbon & Neat
+@import "../../bower_components/bourbon/dist/bourbon";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
 
 // Variables
 
 $primaryDark: rgba(39, 105, 121, 1);
-$primaryLight: rgba(133,179,189, 1);
-$secondayDark: rgba(195,73,57, 1);
-$secondayLight: rgba(235,172,109, 1);
+$primaryLight: rgba(133, 179, 189, 1);
+$secondayDark: rgba(195, 73, 57, 1);
+$secondayLight: rgba(147, 207, 160, 1);
+
+$overlay: rgba(147, 207, 160, 0.9);
 
 $desktopWidth: em(965px);
 
-//Fonts
+// Mixins
+
+@mixin fillContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+}
+
+@mixin blur($amount) {
+    -webkit-filter: blur(#{$amount}px);
+    -moz-filter: blur(#{$amount}px);
+    -o-filter: blur(#{$amount}px);
+    -ms-filter: blur(#{$amount}px);
+    filter: blur(#{$amount}px);
+    margin-bottom: -#{$amount}px;
+}
+
+// Extends
 
 
-// Custom Styles
+// Styles
+
+
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-  font-size:100%;
+    font-family: 'Lato', sans-serif;
+    background: #fafafa;
+    color: #333;
+    font-size: 100%;
 }
 
-ul{
-  margin:0;
-  padding:0;
+ul {
+    margin: 0;
+    padding: 0;
 }
 
-.wrapper{
-  margin:0 auto;
-  max-width:$desktopWidth;
+a{
+    color:$secondayDark;
+    &:hover{
+        color:$primaryDark;
+    }
 }
 
-header{
-  height: em(400px);
-  background:$primaryDark;
+.wrapper {
+    margin: 0 auto;
+    max-width: $desktopWidth;
 }
 
-.centered{
-  text-align:center;
+header {
+    height: em(400px);
+    background: $secondayLight;
+    position: relative;
+    overflow: hidden;
+    &::before,
+    &::after {
+        @include fillContainer;
+    }
+    &::before {
+        background: url(http://trythiswv.com/wp-content/uploads/2013/07/4-people-on-Kan-City-bikes.jpg) 50%;
+        background-size: cover;
+        @include blur(2);
+    }
+    &::after {
+        background: $overlay;
+    }
 }
 
-.logo{
-  height:280px;
-  width:250px;
-  background: url(../images/logo.png);
-  margin:0;
-  margin:0 auto;
-  text-indent: -9999px;
-  margin-top:100px;
+.logo {
+    height: 280px;
+    width: 250px;
+    background: url(../images/logo.png);
+    background-size: 250px 280px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    margin-left: -125px;
+    text-indent: -9999px;
+    z-index: 10;
+}
+
+.centered {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.slogan{
+    font-size: em(25px);
+}
+
+.flikr-content {
+    max-width: 100%;
+    li {
+        width: 33.33%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+footer {
+    background: $secondayLight;
+    color: #FFF;
+    padding: 20px;
+}
+
+@media (max-width: 480px) {
+    .flikr-content {
+        max-height: 400px;
+        overflow: hidden;
+        li {
+            width: 100%;
+            background: #CCC;
+            display: block;
+            vertical-align: top;
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    .logo {
+        background: url(../images/logox2.png);
+        background-size: 250px 280px;
+    }
 }
