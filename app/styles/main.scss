@@ -106,13 +106,15 @@ header {
 
 .flikr-content {
     max-width: 100%;
+    overflow:auto;
     li {
         width: 33.33%;
-        display: inline-block;
-        vertical-align: top;
+        max-height:300px;
+        float:left;
+        overflow:hidden;
     }
     img {
-        max-width: 100%;
+        min-width: 100%;
     }
 }
 
