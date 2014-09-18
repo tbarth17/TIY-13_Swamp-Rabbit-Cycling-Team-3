@@ -20,30 +20,56 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
 
-        <li>Sass</li>
+        <header class="header">
+            <h1 class="logo">Swamp Rabbit Cycling</h1>
+        </header>
+    <div class="wrapper">
+        
+        <section  class="centered">
+            <p class="slogan">Bringing you the best in bicycle gear, equipment and community since 1999!</p>
+        </section>
 
+        <ul class="flikr-content">
+        <li><img src="http://placeimg.com/400/400/people"></li><!-- 
+         --><li><img src="http://placeimg.com/400/400/animals"></li><!-- 
+         --><li><img src="http://placeimg.com/400/400/nature"></li>
 
-        <li>Modernizr</li>
+        </ul>
 
+        <section class="centered">
+            <p>From mountain bikes to kids training wheels, we've got what you need. Come join us for our Saturday community events or just stop by and say hello.</p>
+        </section>
 
-        <li>Bourbon & Neat</li>
+        <ul class="twitter-content"></ul>
 
+        <section class="contactInfo centered">
+            <p>Visit call or email us today and get the most out our your bike riding expereince!</p>
+            <p class="telephone"><a href="tel:+2025550127">(202) 555-0127</a></p>
+            <p class= "email"><a href="mailto:swamprabbitcycling@example.com">swamprabbitcycling@example.com</a></p>
+        </section>
 
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
     </div>
+
+
+        <footer class="centered">
+            <p>2014 Swamp Rabbit Cycling, LLC.</p>
+        </footer>
+
+    <!-- Template for flickr feed -->
+    <script id="template-flikr" type="text/template">
+        <li><img src="#"></li>
+    </script>
+
+    <!-- Template for twitter feed -->
+    <script id="template-twitter" type="text/template">
+        <li></li>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
