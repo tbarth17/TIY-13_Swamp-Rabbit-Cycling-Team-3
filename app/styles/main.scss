@@ -6,8 +6,8 @@
 
 $primaryDark: rgba(39, 105, 121, 1);
 $primaryLight: rgba(133, 179, 189, 1);
-$secondayDark: rgba(195, 73, 57, 1);
-$secondayLight: rgba(147, 207, 160, 1);
+$secondaryDark: rgba(195, 73, 57, 1);
+$secondaryLight: rgba(147, 207, 160, 1);
 
 $overlay: rgba(147, 207, 160, 0.9);
 
@@ -52,7 +52,7 @@ ul {
 }
 
 a{
-    color:$secondayDark;
+    color:$secondaryDark;
     &:hover{
         color:$primaryDark;
     }
@@ -65,7 +65,7 @@ a{
 
 header {
     height: em(400px);
-    background: $secondayLight;
+    background: $secondaryLight;
     position: relative;
     overflow: hidden;
     &::before,
@@ -104,13 +104,24 @@ header {
     font-size: em(25px);
 }
 
-.flikr-content {
+.flickr-wrapper{
     max-width: 100%;
-    overflow:auto;
+    max-height: 300px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.flikr-content {
+  position: relative;
+    max-height: 300px;
+    display: inline;
+    white-space: nowrap;
+    overflow: scroll;
+
     li {
         width: 33.33%;
         max-height:300px;
-        float:left;
+        display: inline-block;
         overflow:hidden;
     }
     img {
@@ -134,7 +145,7 @@ header {
     }
 
 footer {
-    background: $secondayLight;
+    background: $secondaryLight;
     color: #FFF;
     padding: 20px;
 }
