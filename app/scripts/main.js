@@ -17,7 +17,7 @@ function renderTemplate(scriptID, whereTo, data) {
 }
 
 var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
-    tags = "bike,bicycles,mountainbike",
+    tags = "bicycle,bicycles,mountainbike",
     flickrCount = 9,
     flickrSize = "_z";
 
@@ -32,8 +32,9 @@ $.ajax({
         var link = {
             flickrLink: "https://farm" + img.farm + ".staticflickr.com/" + img.server + "/" + img.id + "_" + img.secret + flickrSize + ".jpg"
         };
-        console.log(link);
+        //console.log(link);
         renderTemplate("template-flikr", ".flikr-content", link);
+        //$("li").css("background-image", "url()")
     });
 });
 
