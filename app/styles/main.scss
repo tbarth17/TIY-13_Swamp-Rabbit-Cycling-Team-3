@@ -7,7 +7,7 @@
 //$grid-columns: 3;
 $max-width:100%;
 $gutter: 0;
-$mobile: new-breakpoint(max-width 480px 12);
+$mobile: new-breakpoint(max-width 680px 12);
 $desktop: new-breakpoint(min-width 680px 12);
 
 $primaryDark: rgba(39, 105, 121, 1);
@@ -85,5 +85,3 @@ a{
 @import "contact";
 @import "footer";
 //@import "media-queries";
-
-
