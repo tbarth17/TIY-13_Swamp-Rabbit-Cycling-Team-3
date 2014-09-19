@@ -4,22 +4,27 @@
     font-size: em(25px);
 }
 
-.flickr-wrapper {
-    @include outer-container;
-}
+.flickr-wrapper {}
 
 .flikr-content {
-    @include span-columns(12);
+    //@include span-columns(12);
     height: em(300px);
-    overflow: hidden;
+    overflow-x: hidden;
     li {
-        @include span-columns(12);
         background-size: cover;
         height: em(300px);
-        @include media($desktop) {
+
+    }
+}
+
+@include media($desktop) {
+    @include outer-container;
+    .flikr-content {
+        li {
             @include span-columns(4 of 12, table);
-            @include omega();
+            @include omega;
             //height: em(300px);
         }
+        overflow-y: scroll;
     }
 }

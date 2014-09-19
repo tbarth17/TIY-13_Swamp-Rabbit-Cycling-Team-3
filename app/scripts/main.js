@@ -18,7 +18,7 @@ function renderTemplate(scriptID, whereTo, data) {
 
 var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
     tags = "bicycle,bicycles,mountainbike",
-    flickrCount = 9,
+    flickrCount = 3,
     flickrSize = "_z";
 
 var flickrApiLink =
