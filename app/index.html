@@ -37,7 +37,7 @@
             <div class="flickr-wrapper">
                 <ul class="flikr-content">
                 </ul>
-            </div>
+                    </div>
             <div class="centered">
                 <p>From mountain bikes to kids training wheels, we've got what you need. Come join us for our Saturday community events or just stop by and say hello.</p>
             </div>
@@ -69,7 +69,7 @@
 
 
     <!-- Template for flickr feed -->
-    <script id="template-flikr" type="text/template"><li><img src="<%=flickrLink %>"></li></script>
+    <script id="template-flikr" type="text/template"><li style="background-image: url(<%= flickrLink %>)"></li></script>
 
     <!-- Template for twitter feed -->
     <script id="template-twitter" type="text/template">
@@ -80,6 +80,8 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/hammerjs/hammer.js"></script>
+    <script src="../bower_components/jquery-hammerjs/jquery.hammer.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

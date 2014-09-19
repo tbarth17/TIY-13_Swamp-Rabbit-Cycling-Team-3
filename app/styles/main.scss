@@ -4,6 +4,12 @@
 
 // Variables
 
+//$grid-columns: 3;
+$max-width:100%;
+$gutter: 0;
+$mobile: new-breakpoint(max-width 480px 12);
+$desktop: new-breakpoint(min-width 480px 12);
+
 $primaryDark: rgba(39, 105, 121, 1);
 $primaryLight: rgba(133, 179, 189, 1);
 $secondaryDark: rgba(195, 73, 57, 1);
@@ -59,6 +65,7 @@ a{
 }
 
 .wrapper {
+    @include outer-container;
     margin: 0 auto;
     max-width: $desktopWidth;
 }
@@ -77,6 +84,6 @@ a{
 @import "main-content";
 @import "contact";
 @import "footer";
-@import "media-queries";
+//@import "media-queries";
 
 
