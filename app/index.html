@@ -25,46 +25,48 @@
   </head>
   <body>
 
-
-        <header class="header">
-            <h1 class="logo">Swamp Rabbit Cycling</h1>
-        </header>
+<div class="master-container">
+    <header class="header">
+        <h1 class="logo">Swamp Rabbit Cycling</h1>
+    </header>
     <div class="wrapper">
-
-        <section  class="centered">
-            <p class="slogan">Bringing you the best in bicycle gear, equipment and community since 1999!</p>
+        <section class="main-content">
+            <div class="centered">
+                <p class="slogan">Bringing you the best in bicycle gear, equipment and community since 1999!</p>
+            </div>
+            <div class="flickr-wrapper">
+                <ul class="flikr-content">
+                </ul>
+            </div>
+            <div class="centered">
+                <p>From mountain bikes to kids training wheels, we've got what you need. Come join us for our Saturday community events or just stop by and say hello.</p>
+            </div>
         </section>
-
-      <div class="flickr-wrapper">
-        <ul class="flikr-content">
-        </ul>
-      </div>
-
-        <section class="centered">
-            <p>From mountain bikes to kids training wheels, we've got what you need. Come join us for our Saturday community events or just stop by and say hello.</p>
+        
+        <section>
+            <ul class="twitter-content"></ul>
         </section>
-
-        <ul class="twitter-content"></ul>
-
+    
         <section class="contactInfo centered">
             <p>Visit call or email us today and get the most out our your bike riding expereince!</p>
-              <div class="mapContainer">
-                <iframe
-                  width="600"
-                  height="450"
-                  frameborder="0" style="border:0"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1aD2vuK_xBrfkjYx4cZUUjxGnEr3qpaM&q=170+River+Place+Greenville,+SC+29601">
-                </iframe>
-              </div><!--endmap-->
+            <div class="mapContainer">
+            <iframe
+            width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1aD2vuK_xBrfkjYx4cZUUjxGnEr3qpaM&q=170+River+Place+Greenville,+SC+29601">
+            </iframe>
+            </div><!--endmap-->
             <p class="telephone"><a href="tel:+2025550127">(202) 555-0127</a></p>
-            <p class= "email"><a href="mailto:swamprabbitcycling@example.com">swamprabbitcycling@example.com</a></p>
+            <p class= "email"><a href="mailto:swamprabbitcycling@example.com">swamprabbitcycling@example.com</a>
+            </p>
         </section>
+    </div> <!-- wrapper -->
+    <footer class="centered">
+        <p>2014 Swamp Rabbit Cycling, LLC.</p>
+    </footer>
+</div> <!-- master-container -->
 
-    </div>
-
-        <footer class="centered">
-            <p>2014 Swamp Rabbit Cycling, LLC.</p>
-        </footer>
 
     <!-- Template for flickr feed -->
     <script id="template-flikr" type="text/template"><li><img src="<%=flickrLink %>"></li></script>
