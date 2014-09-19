@@ -1,0 +1,30 @@
+// Main Content
+
+.slogan{
+    font-size: em(25px);
+}
+
+.flickr-wrapper{
+    max-width: 100%;
+    max-height: 300px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.flikr-content {
+  position: relative;
+    max-height: 300px;
+    display: inline;
+    white-space: nowrap;
+    overflow: scroll;
+
+    li {
+        width: 33.33333333%;
+        max-height:300px;
+        display: inline-block;
+        overflow:hidden;
+    }
+    img {
+        min-width: 100%;
+    }
+}
