@@ -11,40 +11,15 @@
 .flikr-content {
     @include span-columns(12);
     height: em(300px);
-            overflow: hidden;
+    overflow: hidden;
     li {
         @include span-columns(12);
         background-size: cover;
         height: em(300px);
         @include media($desktop) {
-            @include span-columns(4 of 12, block);
+            @include span-columns(4 of 12, table);
             @include omega();
             //height: em(300px);
         }
     }
 }
-
-// .flickr-wrapper{
-//     max-width: 100%;
-//     max-height: 300px;
-//     overflow-y: hidden;
-//     position: relative;
-// }
-
-// .flikr-content {
-//   position: relative;
-//     max-height: 300px;
-//     display: inline;
-//     white-space: nowrap;
-//     overflow: scroll;
-
-//     li {
-//         width: 33.33333333%;
-//         max-height:300px;
-//         display: inline-block;
-//         overflow:hidden;
-//     }
-//     img {
-//         min-width: 100%;
-//     }
-// }
