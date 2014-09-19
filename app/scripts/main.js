@@ -2,6 +2,13 @@
 // 0c74aabb810c286e7cb95d06496650f2
 // 5c3bc5492969afe0
 
+// Twitter API Key
+// n7KF5sVBEUxL1fsK6KprbnRoM
+// uTUuLeEgldlyRPEkx09a7K6Y3ejDM4DBhVCgQ6HOflJinxSvYf
+
+// var request = new XMLHttpRequest();
+// request.setRequestHeader('Authorization','OAuth oauth_consumer_key="HdFdA3C3pzTBzbHvPMPw", oauth_nonce="4148fa6e3dca3c3d22a8315dfb4ea5bb", oauth_signature="uDZP2scUz6FUKwFie4FtCtJfdNE%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp= "1359955650", oauth_token, "1127121421-aPHZHQ5BCUoqfHER2UYhQYUEm0zPEMr9xJYizXl", oauth_version="1.0"');
+
 function renderTemplate(scriptID, whereTo, data) {
     console.log(data);
     var template = _.template($("#" + scriptID).text());
@@ -12,7 +19,6 @@ function renderTemplate(scriptID, whereTo, data) {
 var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
     tags = "bike,bicycles,mountainbike",
     flickrCount = 9,
-    tags = "bike,bicycles,mountain,bicycle",
     flickrSize = "_z";
 
 var flickrApiLink =
