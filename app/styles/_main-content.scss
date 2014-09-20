@@ -6,20 +6,35 @@
 
 .flickr-wrapper {
     @include outer-container;
+    position:relative;
+    height: em(300px);
+    overflow: hidden;
 }
 
 .flikr-content {
     @include span-columns(12);
-    height: em(300px);
-    overflow: hidden;
+    width: 1600px;
+    position:absolute;
+    left:0;
+    transition: 1s;
     li {
-        @include span-columns(12);
+        //width:100%;
+        min-width: 320px;
+        max-width: 485px;
         background-size: cover;
         height: em(300px);
-        @include media($desktop) {
+        float:left;
+    }
+}
+
+@include media($desktop) {
+    .flikr-content {
+        width:100%;
+        li {
+
+            width: 100%;
             @include span-columns(4 of 12, table);
-            @include omega();
-            //height: em(300px);
+            @include omega;
         }
     }
 }

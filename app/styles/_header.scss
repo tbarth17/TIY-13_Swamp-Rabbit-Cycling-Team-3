@@ -23,7 +23,7 @@ header {
     height: 280px;
     width: 250px;
     background: url(../images/logo.png);
-    background-size: 250px 280px;
+    background-size: 100px 200px;
     position: absolute;
     top: 25px;
     left: 50%;
@@ -31,6 +31,8 @@ header {
     text-indent: -9999px;
     z-index: 10;
 }
+
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
     .logo {
