@@ -6,11 +6,7 @@
 // n7KF5sVBEUxL1fsK6KprbnRoM
 // uTUuLeEgldlyRPEkx09a7K6Y3ejDM4DBhVCgQ6HOflJinxSvYf
 
-// var request = new XMLHttpRequest();
-// request.setRequestHeader('Authorization','OAuth oauth_consumer_key="HdFdA3C3pzTBzbHvPMPw", oauth_nonce="4148fa6e3dca3c3d22a8315dfb4ea5bb", oauth_signature="uDZP2scUz6FUKwFie4FtCtJfdNE%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp= "1359955650", oauth_token, "1127121421-aPHZHQ5BCUoqfHER2UYhQYUEm0zPEMr9xJYizXl", oauth_version="1.0"');
-
 function renderTemplate(scriptID, whereTo, data) {
-    console.log(data);
     var template = _.template($("#" + scriptID).text());
     $(whereTo).append(template(data));
 
@@ -32,13 +28,16 @@ $.ajax({
         var link = {
             flickrLink: "https://farm" + img.farm + ".staticflickr.com/" + img.server + "/" + img.id + "_" + img.secret + flickrSize + ".jpg"
         };
-        //console.log(link);
         renderTemplate("template-flikr", ".flikr-content", link);
-        //$("li").css("background-image", "url()")
     });
 });
 
+var images = $(".flikr-content");
+
 // Hammer JS
-    $(".flikr-content").hammer().bind("pan", function(){
-        console.log("Touched!");
-    });
+images.hammer().bind("swipeleft", function() {
+    $(this).find(":last").after($(this).find(":first"));
+});
+images.hammer().bind("swiperight", function() {
+    $(this).find(":first").before($(this).find(":last"));
+});
