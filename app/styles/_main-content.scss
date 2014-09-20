@@ -36,5 +36,6 @@
             @include span-columns(4 of 12, table);
             @include omega;
         }
+        overflow-y: scroll;
     }
 }
