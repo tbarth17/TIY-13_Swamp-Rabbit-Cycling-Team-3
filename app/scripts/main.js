@@ -33,11 +33,19 @@ $.ajax({
 });
 
 var images = $(".flikr-content");
+$(function(){
+$(".flikr-content").find(":last-child").remove();
+    
+})
 
 // Hammer JS
 images.hammer().bind("swipeleft", function() {
-    $(this).find(":last").after($(this).find(":first"));
+        images.find(":first").css({minWidth: 0});
+        images.find(":last").after(images.find(":first"));
+        images.find(":last").css({minWidth:320});
 });
 images.hammer().bind("swiperight", function() {
-    $(this).find(":first").before($(this).find(":last"));
+        images.find(":first").css({minWidth: 0});
+        images.find(":first").before(images.find(":last"));
+        images.find(":last").css({minWidth:320});
 });
