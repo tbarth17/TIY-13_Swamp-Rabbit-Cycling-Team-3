@@ -16,7 +16,6 @@
     width: 1600px;
     position:absolute;
     left:0;
-    transition: 1s;
     li {
         //width:100%;
         min-width: 320px;
@@ -24,6 +23,7 @@
         background-size: cover;
         height: em(300px);
         float:left;
+        transition: min-width .3s ease;
     }
 }
 
