@@ -12,21 +12,28 @@
 }
 
 .flikr-content {
-    @include span-columns(12);
-    width: 2700px;
+    /* @include span-columns(12); */
+    width: 2400px;
     /* position:absolute; */
     left:0;
     li {
         //width:100%;
-        min-width: 320px;
-        max-width: 640px;
+        /* min-width: 320px; */
+        /* max-width: em(640px); */
+        @include span-columns(3);
+        @include omega;
         background-size: cover;
         background-position: center center;
         height: em(340px);
+        display: inline-block;
+        white-space: nowrap;
         /* float:left; */
         transition: min-width .3s ease;
     }
 }
+
+
+
 
 @include media($desktop) {
     .flikr-content {
