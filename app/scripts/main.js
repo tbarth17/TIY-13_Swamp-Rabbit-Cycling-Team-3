@@ -14,7 +14,7 @@ function renderTemplate(scriptID, whereTo, data) {
 
 var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
     tags = "bicycle,bicycles,mountainbike",
-    flickrCount = 9,
+    flickrCount = 6,
     flickrSize = "_z";
 
 var flickrApiLink =
@@ -41,12 +41,12 @@ $(".flikr-content").find(":last-child").remove();
 
 // Hammer JS
 images.hammer().bind("swipeleft", function() {
-        images.find(":first").css({minWidth: 0});
+        // images.find(":first").css({minWidth: 0});
         images.find(":last").after(images.find(":first"));
-        images.find(":last").css({minWidth:320});
+        // images.find(":last").css({minWidth:320});
 });
 images.hammer().bind("swiperight", function() {
-        images.find(":first").css({minWidth: 0});
+        // images.find(":first").css({minWidth: 0});
         images.find(":first").before(images.find(":last"));
-        images.find(":last").css({minWidth:320});
+        // images.find(":last").css({minWidth:320});
 });
