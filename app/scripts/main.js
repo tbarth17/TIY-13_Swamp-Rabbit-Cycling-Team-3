@@ -14,7 +14,7 @@ function renderTemplate(scriptID, whereTo, data) {
 
 var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
     tags = "bicycle,bicycles,mountainbike",
-    flickrCount = 3,
+    flickrCount = 9,
     flickrSize = "_z";
 
 var flickrApiLink =
@@ -35,8 +35,8 @@ $.ajax({
 var images = $(".flikr-content");
 $(function(){
 $(".flikr-content").find(":last-child").remove();
-    
-})
+
+});
 
 // Hammer JS
 images.hammer().bind("swipeleft", function() {
