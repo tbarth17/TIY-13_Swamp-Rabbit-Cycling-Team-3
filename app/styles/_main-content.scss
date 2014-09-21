@@ -13,7 +13,7 @@
 
 .flikr-content {
     @include span-columns(12);
-    width: 1600px;
+    width: 2700px;
     position:absolute;
     left:0;
     li {
@@ -21,8 +21,9 @@
         min-width: 320px;
         max-width: 485px;
         background-size: cover;
+        background-position: center center;
         height: em(300px);
-        float:left;
+        /* float:left; */
         transition: min-width .3s ease;
     }
 }
