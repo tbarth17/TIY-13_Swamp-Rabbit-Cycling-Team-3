@@ -7,22 +7,23 @@
 .flickr-wrapper {
     @include outer-container;
     position:relative;
-    height: em(300px);
+    height: em(340px);
     overflow: hidden;
 }
 
 .flikr-content {
     @include span-columns(12);
-    width: 1600px;
-    position:absolute;
+    width: 2700px;
+    /* position:absolute; */
     left:0;
     li {
         //width:100%;
         min-width: 320px;
-        max-width: 485px;
+        max-width: 640px;
         background-size: cover;
-        height: em(300px);
-        float:left;
+        background-position: center center;
+        height: em(340px);
+        /* float:left; */
         transition: min-width .3s ease;
     }
 }
@@ -36,6 +37,6 @@
             @include span-columns(4 of 12, table);
             @include omega;
         }
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
     }
 }
