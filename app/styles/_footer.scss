@@ -3,7 +3,8 @@
 ------------------------------------------------------------*/
 
 footer {
+    padding: em(20px);
     background: $secondaryLight;
-    color: #FFF;
-    padding: 20px;
+    text-shadow: $darkShadow;
+    color: $overlapText;
 }

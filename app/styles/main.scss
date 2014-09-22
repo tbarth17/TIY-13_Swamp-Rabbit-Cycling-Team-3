@@ -2,7 +2,9 @@
     Main 
 ------------------------------------------------------------*/
 
-// Bourbon & Neat
+/*
+    Bourbon & Neat 
+------------------------------------------------------------*/
 @import "../../bower_components/bourbon/dist/bourbon";
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
 
@@ -10,28 +12,32 @@
     Variables 
 ------------------------------------------------------------*/
 
-$smallBreakpoint: 480px;
-$medBreakpoint: 640px;
-$desktopBreakpoint: 960px;
-$max-width:100%;
+// Neat
+$smallBreakpoint: em(480px);
+$medBreakpoint: em(640px);
+$desktopBreakpoint: em(960px);
+$max-width: 100%;
 $gutter: 0;
-
 $tablet: new-breakpoint(min-width $medBreakpoint 12);
 $desktop: new-breakpoint(min-width $desktopBreakpoint 12);
 
+//Colors
 $primaryDark: rgba(39, 105, 121, 1);
 $primaryLight: rgba(133, 179, 189, 1);
 $secondaryDark: rgba(195, 73, 57, 1);
 $secondaryLight: rgba(147, 207, 160, 1);
-
 $overlay: rgba(147, 207, 160, 0.9);
+$primaryText: #333;
+$overlapText: #FFF;
 
+//Other
 $desktopWidth: em(960px);
+$darkShadow: 0 em(1px) 0 rgba(0,0,0,.3);
+$lightShadow: 0 em(1px) 0 rgba(255,255,255,.3);
 
 /*
     Mixins 
 ------------------------------------------------------------*/
-
 
 @mixin fillContainer {
     position: absolute;
@@ -55,12 +61,14 @@ $desktopWidth: em(960px);
     Basic Styles && defaults 
 ------------------------------------------------------------*/
 
-
 body {
     font-family: 'Lato', sans-serif;
-    background: #fafafa;
-    color: #333;
     font-size: 100%;
+    background: #fafafa;
+    color: $primaryText;
+    text-shadow: $lightShadow;
+    line-height: 1.5em;
+
 }
 
 ul {
@@ -69,31 +77,29 @@ ul {
     list-style-type: none;
 }
 
-a{
-    color:$secondaryDark;
+a {
+    color: $secondaryDark;
     text-decoration: none;
-    &:hover{
-        color:$primaryDark;
+    &:hover {
+        color: $primaryDark;
     }
 }
 
-.wrapper {
-    margin: 0 auto;
+.master-container {
+    @include outer-container;
 }
-
 
 .centered {
     text-align: center;
-    padding: 20px 10px;
+    padding: em(20px) em(10px);
 }
 
-.master-container{
-    @include outer-container;
-}
+/*
+    Partials
+------------------------------------------------------------*/
 
 @import "header";
 @import "main-content";
 @import "contact";
 @import "map";
 @import "footer";
-//@import "media-queries";

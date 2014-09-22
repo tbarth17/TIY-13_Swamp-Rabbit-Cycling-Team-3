@@ -2,8 +2,24 @@
     Main-Content
 ------------------------------------------------------------*/
 
+.main-content{
+    @include outer-container;
+        max-width: $desktopWidth;
+    > div{
+        @include span-columns(12);
+    }
+}
+
+.description{
+    p{
+        @include span-columns(10);
+        @include shift(1);
+    }
+}
+
 .slogan {
     font-size: em(25px);
+    line-height: 1.5em;
 }
 
 .flickr-wrapper {
@@ -21,13 +37,12 @@
         @include omega;
         position: absolute;
         left: 0;
-        float: none;
         height: em(340px);
         min-width: em(320px);
         max-width: em(640px);
         background-size: cover;
         background-position: center center;
-        transition: .3s ease;
+        transition: left .3s ease-out;
     }
 }
 
@@ -64,7 +79,6 @@
             position: static;
             display: inline-block;
         }
-        /* overflow-y: scroll; */
     }
     .description {
         display: block;
