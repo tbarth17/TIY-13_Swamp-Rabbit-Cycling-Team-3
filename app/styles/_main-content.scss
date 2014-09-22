@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------
-    Main-Content 
+    Main-Content
 ------------------------------------------------------------*/
 
 .slogan {
@@ -55,10 +55,12 @@
     .flickr-content {
         @include span-columns(12);
         width: 100%;
-        overflow: auto;
+        height: em(340px);
+        overflow-y: hidden;
         li {
             @include span-columns(4 of 12, table);
             @include omega;
+            height: em(340);
             position: static;
             display: inline-block;
         }
