@@ -4,6 +4,6 @@
 
 .contactInfo {
     @include outer-container;
-    background: $primaryLight;
     padding: em(20px);
+    background: $primaryLight;
 }

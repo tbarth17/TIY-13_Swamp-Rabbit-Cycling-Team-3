@@ -3,18 +3,18 @@
 ------------------------------------------------------------*/
 
 header {
-    height: em(400px);
-    background: $secondaryLight;
     position: relative;
+    height: em(400px);
     overflow: hidden;
+    background: $secondaryLight;
     &::before,
     &::after {
         @include fillContainer;
     }
     &::before {
+        @include blur(2);
         background: url(http://trythiswv.com/wp-content/uploads/2013/07/4-people-on-Kan-City-bikes.jpg) 50%;
         background-size: cover;
-        @include blur(2);
     }
     &::after {
         background: $overlay;
@@ -22,16 +22,16 @@ header {
 }
 
 .logo {
-    height: 280px;
-    width: 250px;
-    background: url(../images/logo.png);
-    background-size: 250px 280px;
     position: absolute;
     top: 25px;
     left: 50%;
+    height: 280px;
+    width: 250px;
     margin-left: -125px;
-    text-indent: -9999px;
     z-index: 10;
+    background: url(../images/logo.png);
+    background-size: 250px 280px;
+    text-indent: -9999px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {

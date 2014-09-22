@@ -3,20 +3,18 @@
 ------------------------------------------------------------*/
 
 .mapContainer {
-
-  @include outer-container;
-
+    @include outer-container;
     max-width: $desktopWidth;
-  position: relative;
-  padding-bottom: 50%;
-  height: 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
 }
 
 .mapContainer iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
