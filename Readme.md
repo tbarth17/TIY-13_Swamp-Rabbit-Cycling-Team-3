@@ -54,4 +54,15 @@ function swipe(){
     if(docWidth <= desktopBreak)
         swipe();
 
+/* ----------------------------------
+Listen for change from portait/landscape and reposition elements accordingly
+-------------------------------------*/
+$(window).resize(function(){
+    winWidth = $(window).width();
+    $(".flickr-content li").not(":first",":last").css({left:winWidth});
+    $(".flickr-content li").eq(1).css({left:0});
+    $(".flickr-content li").find(":last").css({left:-winWidth});
+});
+
+
 ```
