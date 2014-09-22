@@ -1,17 +1,23 @@
+/* ------------------------------------------------------------
+    Main 
+------------------------------------------------------------*/
+
 // Bourbon & Neat
 @import "../../bower_components/bourbon/dist/bourbon";
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
 
-// Variables
+/*
+    Variables 
+------------------------------------------------------------*/
 
-$smallBreakpoint: 560px;
+$smallBreakpoint: 480px;
 $medBreakpoint: 640px;
-
-//$grid-columns: 3;
+$desktopBreakpoint: 960px;
 $max-width:100%;
 $gutter: 0;
-$mobile: new-breakpoint(max-width $smallBreakpoint 12);
-$desktop: new-breakpoint(min-width $smallBreakpoint 12);
+
+$tablet: new-breakpoint(min-width $medBreakpoint 12);
+$desktop: new-breakpoint(min-width $desktopBreakpoint 12);
 
 $primaryDark: rgba(39, 105, 121, 1);
 $primaryLight: rgba(133, 179, 189, 1);
@@ -22,7 +28,10 @@ $overlay: rgba(147, 207, 160, 0.9);
 
 $desktopWidth: em(960px);
 
-// Mixins
+/*
+    Mixins 
+------------------------------------------------------------*/
+
 
 @mixin fillContainer {
     position: absolute;
@@ -42,10 +51,9 @@ $desktopWidth: em(960px);
     margin-bottom: -#{$amount}px;
 }
 
-// Extends
-
-
-// Styles
+/*
+    Basic Styles && defaults 
+------------------------------------------------------------*/
 
 
 body {
@@ -63,15 +71,14 @@ ul {
 
 a{
     color:$secondaryDark;
+    text-decoration: none;
     &:hover{
         color:$primaryDark;
     }
 }
 
 .wrapper {
-    @include outer-container;
     margin: 0 auto;
-    max-width: $desktopWidth;
 }
 
 
@@ -87,5 +94,6 @@ a{
 @import "header";
 @import "main-content";
 @import "contact";
+@import "map";
 @import "footer";
 //@import "media-queries";

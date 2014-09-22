@@ -1,24 +1,19 @@
-// Jonathan's Flickr API key
-// 0c74aabb810c286e7cb95d06496650f2
-// 5c3bc5492969afe0
+var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
+    tags = "bicycle,bicycles,mountainbike",
+    flickrCount = 3,
+    flickrSize = "_z",
+    flickrApiLink =
+    "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + flickrKey + "&format=json&tags=" + tags + "&jsoncallback=?&per_page=" + flickrCount,
+    $imageContainer = $(".flickr-content"),
+    $images = $(".flickr-content li"),
+    docWidth = $(document).width();
 
-// Twitter API Key
-// n7KF5sVBEUxL1fsK6KprbnRoM
-// uTUuLeEgldlyRPEkx09a7K6Y3ejDM4DBhVCgQ6HOflJinxSvYf
 
 function renderTemplate(scriptID, whereTo, data) {
     var template = _.template($("#" + scriptID).text());
     $(whereTo).append(template(data));
-
 }
 
-var flickrKey = "0c74aabb810c286e7cb95d06496650f2",
-    tags = "bicycle,bicycles,mountainbike",
-    flickrCount = 6,
-    flickrSize = "_z";
-
-var flickrApiLink =
-    "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + flickrKey + "&format=json&tags=" + tags + "&jsoncallback=?&per_page=" + flickrCount;
 $.ajax({
     url: flickrApiLink,
     type: "GET",
@@ -28,25 +23,36 @@ $.ajax({
         var link = {
             flickrLink: "https://farm" + img.farm + ".staticflickr.com/" + img.server + "/" + img.id + "_" + img.secret + flickrSize + ".jpg"
         };
-        renderTemplate("template-flikr", ".flikr-content", link);
+        renderTemplate("template-flickr", ".flickr-content", link);
     });
-});
 
-var images = $(".flikr-content");
-$(function(){
-$(".flikr-content").find(":last-child").remove();
-
+    if(docWidth <= 480)
+        swipe();
 });
 
 
-// Hammer JS
-images.hammer().bind("swipeleft", function() {
-        // images.find(":first").css({minWidth: 0});
-        images.find(":last").after(images.find(":first"));
-        // images.find(":last").css({minWidth:320});
-});
-images.hammer().bind("swiperight", function() {
-        // images.find(":first").css({minWidth: 0});
-        images.find(":first").before(images.find(":last"));
-        // images.find(":last").css({minWidth:320});
-});
+function swipe(){
+    // Position images in stack
+    // If li is not first set position outside right of viewport
+    $(".flickr-content li").not(":first").css({left:docWidth});
+    // Move the last element in front of the first and set position outside left of viewport
+    $(".flickr-content").find(":first").before($(".flickr-content").find(":last").css({left:-docWidth}));
+
+    $(".flickr-content li").hammer().bind("swipeleft", function() {
+        // position the swiped element left of viewport and position next element in viewport
+        $(this).css({left:-docWidth}).next().css({left:0});
+        // After the animation^ move the first element to end of stack and position it right of viewport
+        setTimeout(function(){
+            $(".flickr-content").find(":last").after($(".flickr-content").find(":first").css({left:docWidth}));
+        },200);
+    });
+    $(".flickr-content li").hammer().bind("swiperight", function() {
+        // position the swiped element right of viewport and position next element in viewport
+        $(this).css({left:docWidth}).prev().css({left:0});
+        // After the animation^ move the last element to front of stack and position it left of viewport
+        setTimeout(function(){
+            $imageContainer.find(":first").before($imageContainer.find(":last").css({left:-docWidth}));
+        },200);
+    });
+}
+
