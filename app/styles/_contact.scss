@@ -1,15 +1,9 @@
+/* ------------------------------------------------------------
+    Contact 
+------------------------------------------------------------*/
 
-.mapContainer {
-  position: relative;
-  padding-bottom: 50%;
-  height: 0;
-  overflow: hidden;
+.contactInfo {
+    @include outer-container;
+    background: $primaryLight;
+    padding: em(20px);
 }
-
-.mapContainer iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-    }

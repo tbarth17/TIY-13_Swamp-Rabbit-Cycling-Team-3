@@ -1,4 +1,6 @@
-// Main Content
+/* ------------------------------------------------------------
+    Main-Content 
+------------------------------------------------------------*/
 
 .slogan {
     font-size: em(25px);
@@ -6,44 +8,63 @@
 
 .flickr-wrapper {
     @include outer-container;
-    position:relative;
-    height: em(340px);
     overflow: hidden;
+    max-width: $desktopWidth;
 }
 
-.flikr-content {
-    /* @include span-columns(12); */
-    width: 2400px;
-    /* position:absolute; */
-    left:0;
+.flickr-content {
+    @include span-columns(12);
+    height: em(340px);
+    position: relative;
     li {
-        //width:100%;
-        /* min-width: 320px; */
-        /* max-width: em(640px); */
-        @include span-columns(3);
+        @include span-columns(12);
         @include omega;
+        position: absolute;
+        left: 0;
+        float: none;
+        height: em(340px);
+        min-width: em(320px);
+        max-width: em(640px);
         background-size: cover;
         background-position: center center;
-        height: em(340px);
-        display: inline-block;
-        white-space: nowrap;
-        /* float:left; */
-        transition: min-width .3s ease;
+        transition: .3s ease;
     }
 }
 
+.description {
+    display: none;
+}
 
+// Tablet breakpoint
 
+@include media($tablet) {
+    .flickr-content {
+        @include span-columns(12);
+        height: em(340px);
+        li {
+            @include span-columns(6 of 12, table);
+            position: static;
+            display: inline-block;
+        }
+    }
+}
+
+// Desktop Breakpoint
 
 @include media($desktop) {
-    .flikr-content {
-        width:100%;
+    .flickr-content {
+        @include span-columns(12);
+        width: 100%;
+        overflow: auto;
         li {
-
-            width: 100%;
             @include span-columns(4 of 12, table);
             @include omega;
+            position: static;
+            display: inline-block;
         }
         /* overflow-y: scroll; */
+    }
+    .description {
+        display: block;
     }
 }
