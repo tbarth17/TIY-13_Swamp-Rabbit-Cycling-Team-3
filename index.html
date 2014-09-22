@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>13</title>
+    <title>Swamp Rabbit Cycling</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link rel="stylesheet" href="styles/vendor.css">
@@ -14,65 +14,52 @@
     <script src="scripts/vendor/modernizr.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-  </head>
-  <body>
+    </head>
+    <body>
 
+        <div class="master-container">
+            <header class="header">
+                <h1 class="logo">Swamp Rabbit Cycling</h1>
+            </header>
+            <section class="main-content">
+                <div class="centered">
+                    <p class="slogan">Bringing you the best in bicycle gear, equipment and community since 1999!</p>
+                </div>
+                <div class="flickr-wrapper">
+                    <ul class="flickr-content">
+                    </ul>
+                </div>
+                <div class="description centered">
+                    <p>From mountain bikes to kids training wheels, we've got what you need. Come join us for our Saturday community events or just stop by and say hello.</p>
+                </div>
+            </section>
+            
+            <section class="contactInfo centered">
+                <p>Visit call or email us today and get the most out our your bike riding expereince!</p>
+                <p class="telephone"><a href="tel:+2025550127">(202) 555-0127</a></p>
+                <p class= "email"><a href="mailto:swamprabbitcycling@example.com">swamprabbitcycling@example.com</a>
+                </p>
+            </section>
 
-        <header class="header">
-            <h1 class="logo">Swamp Rabbit Cycling</h1>
-        </header>
-    <div class="wrapper">
-
-        <section  class="centered">
-            <p class="slogan">Bringing you the best in bicycle gear, equipment and community since 1999!</p>
-        </section>
-
-        <ul class="flikr-content">
-        <li><img src="http://placeimg.com/400/400/people"></li><!--
-         --><li><img src="http://placeimg.com/400/400/animals"></li><!--
-         --><li><img src="http://placeimg.com/400/400/nature"></li>
-
-        </ul>
-
-        <section class="centered">
-            <p>From mountain bikes to kids training wheels, we've got what you need. Come join us for our Saturday community events or just stop by and say hello.</p>
-        </section>
-
-        <ul class="twitter-content"></ul>
-
-        <section class="contactInfo centered">
-            <p>Visit call or email us today and get the most out our your bike riding expereince!</p>
-              <div class="mapContainer">
+            <div class="mapContainer">
                 <iframe
-                  width="600"
-                  height="450"
-                  frameborder="0" style="border:0"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1aD2vuK_xBrfkjYx4cZUUjxGnEr3qpaM&q=170+River+Place+Greenville,+SC+29601">
+                width="600"
+                height="150"
+                style='pointer-events:none'
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1aD2vuK_xBrfkjYx4cZUUjxGnEr3qpaM&q=170+River+Place+Greenville,+SC+29601">
                 </iframe>
-              </div><!--endmap-->
-            <p class="telephone"><a href="tel:+2025550127">(202) 555-0127</a></p>
-            <p class= "email"><a href="mailto:swamprabbitcycling@example.com">swamprabbitcycling@example.com</a></p>
-        </section>
-
-    </div>
-
-
+            </div>
+        </div>
         <footer class="centered">
             <p>2014 Swamp Rabbit Cycling, LLC.</p>
         </footer>
 
-    <!-- Template for flickr feed -->
-    <script id="template-flikr" type="text/template">
-        <li><img src="#"></li>
-    </script>
+        <!-- Template for flickr feed -->
+        <script id="template-flickr" type="text/template"><li style="background-image: url(<%= flickrLink %>)"></li></script>
 
-    <!-- Template for twitter feed -->
-    <script id="template-twitter" type="text/template">
-        <li></li>
-    </script>
-
-    <script src="scripts/vendor.js"></script>
+        <script src="scripts/vendor.js"></script>
 
         <script src="scripts/main.js"></script>
-</body>
+    </body>
 </html>
