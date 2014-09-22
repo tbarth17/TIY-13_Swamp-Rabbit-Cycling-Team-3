@@ -12,6 +12,8 @@
 
 ```js
 
+var docWidth = $(document).width(),
+
 function swipe(){
     var $imageContainer = $(".flickr-content"),
         $image = $(".flickr-content li");
@@ -47,5 +49,9 @@ function swipe(){
         },0);
     });
 }
+
+ //Call swipe function on injected images to give swipe functionality but only to devices at and below the desktop breakpoint
+    if(docWidth <= desktopBreak)
+        swipe();
 
 ```
