@@ -25,32 +25,33 @@ $.ajax({
         };
         renderTemplate("template-flickr", ".flickr-content", link);
     });
-    swipe;
+
+    if(docWidth <= 480)
+        swipe();
 });
 
 
 function swipe(){
-    console.log("aslkdjfasldkjfa");
     // Position images in stack
     // If li is not first set position outside right of viewport
-    $(".flickr-content li").not(":first").css({left:250});
+    $(".flickr-content li").not(":first").css({left:docWidth});
     // Move the last element in front of the first and set position outside left of viewport
-    $(".flickr-content").find(":first").before($(".flickr-content").find(":last").css({left:-250}));
+    $(".flickr-content").find(":first").before($(".flickr-content").find(":last").css({left:-docWidth}));
 
     $(".flickr-content li").hammer().bind("swipeleft", function() {
         // position the swiped element left of viewport and position next element in viewport
-        $(this).css({left:-250}).next().css({left:0});
+        $(this).css({left:-docWidth}).next().css({left:0});
         // After the animation^ move the first element to end of stack and position it right of viewport
         setTimeout(function(){
-            $(".flickr-content").find(":last").after($(".flickr-content").find(":first").css({left:250}));
+            $(".flickr-content").find(":last").after($(".flickr-content").find(":first").css({left:docWidth}));
         },200);
     });
     $(".flickr-content li").hammer().bind("swiperight", function() {
         // position the swiped element right of viewport and position next element in viewport
-        $(this).css({left:250}).prev().css({left:0});
+        $(this).css({left:docWidth}).prev().css({left:0});
         // After the animation^ move the last element to front of stack and position it left of viewport
         setTimeout(function(){
-            $imageContainer.find(":first").before($imageContainer.find(":last").css({left:-250}));
+            $imageContainer.find(":first").before($imageContainer.find(":last").css({left:-docWidth}));
         },200);
     });
 }
