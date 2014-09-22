@@ -48,8 +48,6 @@ $(window).resize(function(){
 Adds swipe functionality to elements using hammer.js and positioning.
 -------------------------------------*/
 function swipe(){
-    var $imageContainer = $(".flickr-content"),
-        $image = $(".flickr-content li");
     /*
     Position images in stack
     -------------------------------------*/
